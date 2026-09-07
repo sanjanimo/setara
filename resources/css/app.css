@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    /* Typography */
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+    --font-accent: "Fraunces", Georgia, serif;
+
+    /* Brand Colors */
+    --color-teal-forest: #0f766e;
+    --color-teal-hover: #0d655e;
+    --color-warm-amber: #d97706;
+    --color-amber-hover: #b45309;
+
+    /* Semantic / Urgency Colors */
+    --color-urgency-red: #dc2626;
+    --color-urgency-yellow: #f59e0b;
+    --color-urgency-green: #16a34a;
+
+    /* Neutral / Surface Colors */
+    --color-warm-bg: #fafaf9;
+    --color-warm-surface: #ffffff;
+    --color-stone-ink: #0f172a;
+    --color-stone-gray: #57534e;
+    --color-border-soft: #e7e5e4;
+}
+
+
+/* Custom Animation for Map / Badges */
+@keyframes pulse-wave {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    70% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+}
+
+.pulse-wave {
+    animation: pulse-wave 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Base Global Styles */
+@layer base {
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-warm-bg);
+        color: var(--color-stone-ink);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-heading);
+        color: var(--color-stone-ink);
+    }
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* Leaflet Map SETARA */
+.leaflet-container {
+    font-family: var(--font-sans);
+}
+
+.setara-pin {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 9999px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.35);
+}
+
+.setara-pin-kritis::after {
+    content: "";
+    position: absolute;
+    inset: -9px;
+    border-radius: 9999px;
+    background: rgba(220, 38, 38, 0.35);
+    animation: pulse-wave 1.8s ease-out infinite;
+    z-index: -1;
+}
+
+.leaflet-div-icon {
+    background: transparent;
+    border: none;
+}
+
+/* ===== MOTIF KHAS SETARA ===== */
+::selection {
+    background: rgba(217, 119, 6, 0.25);
+}
+
+.grain {
+    position: relative;
+}
+.grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.pulse-field {
+    background:
+        radial-gradient(
+            circle at 18% 28%,
+            rgba(15, 118, 110, 0.07),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 82% 72%,
+            rgba(217, 119, 6, 0.06),
+            transparent 46%
+        );
+}
+
+.stroke-amber {
+    position: relative;
+    z-index: 0;
+}
+.stroke-amber::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -0.08em;
+    right: -0.08em;
+    bottom: 0.05em;
+    height: 0.32em;
+    background: color-mix(in srgb, var(--color-warm-amber) 38%, transparent);
+    border-radius: 9999px;
+    transform: skewX(-6deg);
+}
+
+.card-craft {
+    box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.06),
+        0 12px 28px -14px rgba(15, 23, 42, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.stitch {
+    border-top: 2px dashed var(--color-border-soft);
+}
+
+.stock-bar {
+    height: 6px;
+    border-radius: 9999px;
+    background: var(--color-border-soft);
+    overflow: hidden;
+}
+.stock-bar > span {
+    display: block;
+    height: 100%;
+    border-radius: 9999px;
+}
+
+.thread-vertical {
+    position: relative;
+}
+
+.thread-vertical::before {
+    content: "";
+    position: absolute;
+    left: 27px;
+    top: 28px;
+    bottom: 28px;
+    width: 0;
+    border-left: 2px dashed
+        color-mix(in srgb, var(--color-teal-forest) 25%, transparent);
+    z-index: 0;
+}
+
+.thread-vertical > div {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ===== FORM CONTROLS GLOBAL ===== */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    border: 1px solid #d6d3d1 !important;
+    background-color: #ffffff;
+    color: var(--color-stone-ink);
+    border-radius: 0.5rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a8a29e;
+    opacity: 1;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus,
+select:focus,
+textarea:focus {
+    outline: none !important;
+    border-color: var(--color-teal-forest) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-teal-forest) 20%, transparent) !important;
+}
+
+input:disabled,
+input[readonly] {
+    background-color: var(--color-warm-bg) !important;
+    color: var(--color-stone-gray);
+}
+
+html.lenis,
+html.lenis body {
+        height: auto;
+        min-height: 100%;
+}
+
+html.lenis {
+        overflow-y: scroll;
+}
+
+html.lenis body {
+        overflow: visible;
+}
+
+.lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+        overflow: visible;
+}
+.lenis.lenis-smooth iframe {
+        pointer-events: none;
+}
