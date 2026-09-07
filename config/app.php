@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://setara-production-0557.up.railway.app'),
 
     /*
     |--------------------------------------------------------------------------
