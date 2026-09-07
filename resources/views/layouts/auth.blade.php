@@ -9,6 +9,7 @@
         <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700&display=swap" rel="stylesheet" />
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="icon" type="image/png" href="{{ asset('images/home/logoSetara.png') }}">
     </head>
     <!-- Tambahan py-10 sm:py-16 untuk memberikan jarak atas & bawah dari ujung browser -->
     <body class="font-sans antialiased bg-gray-50 text-gray-900 min-h-screen flex items-center justify-center px-4 py-10 sm:py-16">
