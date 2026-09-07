@@ -7,6 +7,7 @@
     <title>@yield('title', 'Dashboard') — SETARA</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" type="image/png" href="{{ asset('images/home/logoSetara.png') }}">
 </head>
 
 <body class="min-h-screen bg-warm-bg font-sans text-stone-ink antialiased" x-data="{ sidebarOpen: false }">
