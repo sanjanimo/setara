@@ -8,6 +8,7 @@
     <meta name="description"
         content="SETARA menghubungkan panti, relawan, dan donatur berdasarkan kebutuhan paling mendesak, bukan popularitas.">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" type="image/png" href="{{ asset('images/home/logoSetara.png') }}">
 </head>
 
 <body class="flex min-h-screen flex-col font-sans bg-warm-bg text-stone-ink antialiased" x-data="{ mobileMenuOpen: false }">
