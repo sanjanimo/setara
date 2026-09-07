@@ -3,8 +3,8 @@
 # SETARA
 ### Bantuan tepat, karena kebutuhan terlihat.
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://ISI_URL_DEMO)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://ISI_URL_REPO)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://setara-production-0557.up.railway.app/https://setara-production-0557.up.railway.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/sanjanimo/setara)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 **Submission for ITECHNO CUP 2026 — Web Development**
@@ -147,7 +147,7 @@ SETARA dirancang dengan prinsip *privacy & ethics by design*, bukan sebagai temp
 
 ### Live Demo
 
-🔗 **[Kunjungi Website](https://ISI_URL_DEMO)**
+🔗 **[Kunjungi Website](https://setara-production-0557.up.railway.app/)**
 
 ### Screenshot Aplikasi
 
